@@ -1,5 +1,24 @@
 #include "console.h"
 
+void startField( char field[][5] )
+{
+    for( int i = 0; i < 3; ++i )
+    {
+        for( int j = 0; j < 3; ++j  )
+        {
+            if( j == 1 || j ==  3 )
+            {
+                field[ 2 * i ][ j ] = '|';
+            }
+            if( i == 1 || i ==  3 )
+            {
+                field[ i ][ j ] = '_ _';
+            }
+        }
+    }
+}
+
+
 char win( char field[ ][5] )
 {
     if( field[0][0] == field[0][2] && field[0][2] == field[0][4] )
@@ -54,15 +73,16 @@ bool checkFor( int x, int y, char field[ ][ 5 ] )
     return 0;
 }
 
-void show ( char field[ ][ 5 ] )
+void show ( char field[ ][5] )
 {
     for( int i = 0; i < 5; ++i)
     {
         for( int j = 0; j < 5; ++j)
         {
+            cout.width( 2 );
             cout << field[ i ][ j ];
         }
+        cout << endl;
     }
 }
-
 
