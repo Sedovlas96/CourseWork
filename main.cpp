@@ -9,17 +9,10 @@ int main()
 {
     int x,y, step = 0;
     char field[5][5];
-    for( int i = 0; i < 5; ++i )
-    {
-        for( int j = 0; j < 5; ++j  )
-        {
-            field[ 2 * i ][ 2 * j ] = '*';
-            field[ 2 * i + 1 ][ j ] = '--';
-            field[ i ][ 2 * j + 1 ] = '|';
-        }
-    }
+    startField( field );
     cout << " You are welcome \n ";
     show ( field );
+    system ( " pause " );
     do
     {
         system( " cls " );
@@ -37,6 +30,7 @@ int main()
             field[ 2 * ( y - 1 ) ][ 2 * ( x - 1 ) ] = 'X';
             system( " cls " );
             show ( field );
+            system( " pause " );
         }
         else
         {
@@ -57,6 +51,7 @@ int main()
             field[ 2 * y ][ 2 * x ] = 'O';
             system( " cls " );
             show ( field );
+            system( " pause " );
         }
         else
         {
